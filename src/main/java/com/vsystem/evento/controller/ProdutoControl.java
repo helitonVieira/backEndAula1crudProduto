@@ -11,45 +11,45 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.vsystem.evento.model.Products;
-import com.vsystem.evento.service.ProductsService;
+import com.vsystem.evento.model.Produto;
+import com.vsystem.evento.service.ProdutoService;
 
 import javassist.tools.rmi.ObjectNotFoundException;
 
 @org.springframework.web.bind.annotation.RestController
-public class ProductsControl {
+public class ProdutoControl {
 	
 	@Autowired
-	private ProductsService service;
+	private ProdutoService service;
 	
-	@PostMapping("/products")
+	@PostMapping("/produto")
 	@Transactional
-	public Products cadastraProducts(@RequestBody Products produto) {		 
-			service.salveProducts(produto);		
+	public Produto cadastraProduto(@RequestBody Produto produto) {		 
+			service.salveProduto(produto);		
 			return  produto;			
 	}
 	
-	@GetMapping("/products")
-	public Iterable<Products> showAllProducts(){
-		return service.showAllProducts();
+	@GetMapping("/produto")
+	public Iterable<Produto> showAllProduto(){
+		return service.showAllProduto();
 	}
 	
-	@RequestMapping(value="/products/{id}", method= RequestMethod.DELETE)
+	@RequestMapping(value="/produto/{id}", method= RequestMethod.DELETE)
 	@Transactional
-	public  ResponseEntity<Void> deleteProducts( @PathVariable int id) throws ObjectNotFoundException{
-		  service.deleteProductsById(id);
+	public  ResponseEntity<Void> deleteProduto( @PathVariable int id) throws ObjectNotFoundException{
+		  service.deleteProdutoById(id);
 		return  ResponseEntity.noContent().build();
 	}
 	
-	@GetMapping("/products/{id}")
+	@GetMapping("/produto/{id}")
 	@Transactional
-	public Products buscaProducts(@PathVariable int id) throws ObjectNotFoundException{
+	public Produto buscaProduto(@PathVariable int id) throws ObjectNotFoundException{
 		return service.find(id);
 	}
 	
-	@RequestMapping(value="/products/{id}", method= RequestMethod.PUT)
+	@RequestMapping(value="/produto/{id}", method= RequestMethod.PUT)
 	@Transactional
-	public ResponseEntity<Void> update(@RequestBody Products obj, @PathVariable int id) throws ObjectNotFoundException{
+	public ResponseEntity<Void> update(@RequestBody Produto obj, @PathVariable int id) throws ObjectNotFoundException{
 		obj.setId(id);
 		obj = service.update(obj);
 		return ResponseEntity.noContent().build();
