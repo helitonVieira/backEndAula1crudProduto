@@ -1,4 +1,4 @@
-package com.vsystem.evento.service;
+package com.vsystem.evento.services;
 
 import javax.mail.internet.MimeMessage;
 

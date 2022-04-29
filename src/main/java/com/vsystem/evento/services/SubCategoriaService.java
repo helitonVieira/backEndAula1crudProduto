@@ -1,4 +1,4 @@
-package com.vsystem.evento.service;
+package com.vsystem.evento.services;
 
 import java.util.List;
 import java.util.Optional;
@@ -7,15 +7,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort.Direction;
 import org.springframework.stereotype.Service;
 
-import org.springframework.data.domain.Sort.Direction;
 import com.vsystem.evento.dto.SubCategoriaDTO;
-import com.vsystem.evento.model.Produto;
 import com.vsystem.evento.model.SubCategoria;
 import com.vsystem.evento.repository.SubCategoriaRepository;
-import com.vsystem.evento.service.exception.DataIntegrityException;
-import com.vsystem.evento.service.exception.ObjectNotFoundException;
+import com.vsystem.evento.services.exception.DataIntegrityException;
+import com.vsystem.evento.services.exception.ObjectNotFoundException;
 
 @Service
 public class SubCategoriaService {

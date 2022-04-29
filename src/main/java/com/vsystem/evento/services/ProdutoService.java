@@ -1,4 +1,4 @@
-package com.vsystem.evento.service;
+package com.vsystem.evento.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -7,8 +7,7 @@ import com.vsystem.evento.dto.ProdutoDTO;
 import com.vsystem.evento.model.Produto;
 import com.vsystem.evento.model.SubCategoria;
 import com.vsystem.evento.repository.ProdutoRepository;
-
-import javassist.tools.rmi.ObjectNotFoundException;
+import com.vsystem.evento.services.exception.ObjectNotFoundException;
 
 @Service
 public class ProdutoService {
@@ -29,10 +28,10 @@ public class ProdutoService {
 	public void salveProduto(Produto produto) {
 		repo.save(produto);	
 		//envio por smtp
-		emailService.sendOrderConfirmationEmail(produto);
+		//emailService.sendOrderConfirmationEmail(produto);
 		
 		//envio por html caso de erro envia via smtp
-		emailService.sendOrderConfirmationHtmlEmail(produto);
+		//emailService.sendOrderConfirmationHtmlEmail(produto);
 	}
 	
 	public Produto update(Produto produto) throws ObjectNotFoundException {
@@ -62,4 +61,5 @@ public class ProdutoService {
 	public Produto fromDTO(ProdutoDTO produtoDTO, SubCategoria subCat) {
 		return new Produto(produtoDTO.getId(),produtoDTO.getNome(),subCat,produtoDTO.getPreco());	 		
 	}
+		
 }

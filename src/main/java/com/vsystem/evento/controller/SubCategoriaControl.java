@@ -18,7 +18,7 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.vsystem.evento.dto.SubCategoriaDTO;
 import com.vsystem.evento.model.SubCategoria;
-import com.vsystem.evento.service.SubCategoriaService;
+import com.vsystem.evento.services.SubCategoriaService;
 
 
 @RestController

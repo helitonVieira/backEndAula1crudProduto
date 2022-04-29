@@ -1,4 +1,4 @@
-package com.vsystem.evento.service.exception;
+package com.vsystem.evento.services.exception;
 
 public class AuthorizationException extends RuntimeException {
 

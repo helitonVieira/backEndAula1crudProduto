@@ -4,8 +4,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 
-import com.vsystem.evento.service.EmailService;
-import com.vsystem.evento.service.MockEmailService;
+import com.vsystem.evento.services.EmailService;
+import com.vsystem.evento.services.MockEmailService;
 
 @Configuration
 @Profile("test")

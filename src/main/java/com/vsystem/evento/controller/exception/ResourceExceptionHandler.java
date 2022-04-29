@@ -9,10 +9,10 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
-import com.vsystem.evento.service.exception.AuthorizationException;
-import com.vsystem.evento.service.exception.DataIntegrityException;
-import com.vsystem.evento.service.exception.FileException;
-import com.vsystem.evento.service.exception.ObjectNotFoundException;
+import com.vsystem.evento.services.exception.AuthorizationException;
+import com.vsystem.evento.services.exception.DataIntegrityException;
+import com.vsystem.evento.services.exception.FileException;
+import com.vsystem.evento.services.exception.ObjectNotFoundException;
 
 @ControllerAdvice
 public class ResourceExceptionHandler {

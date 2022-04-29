@@ -8,6 +8,8 @@ public class VSystemEventoApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(VSystemEventoApplication.class, args);
+		
+		System.out.println("teste vsystem eventos");
 	}
 
 }

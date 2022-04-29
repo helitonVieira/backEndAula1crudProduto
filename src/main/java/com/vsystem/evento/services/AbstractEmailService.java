@@ -1,4 +1,4 @@
-package com.vsystem.evento.service;
+package com.vsystem.evento.services;
 
 import java.util.Date;
 

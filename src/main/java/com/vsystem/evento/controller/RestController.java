@@ -3,15 +3,13 @@ package com.vsystem.evento.controller;
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.vsystem.evento.model.Usuario;
-import com.vsystem.evento.service.UsuarioService;
+import com.vsystem.evento.services.UsuarioService;
 
 @org.springframework.web.bind.annotation.RestController
 public class RestController {
