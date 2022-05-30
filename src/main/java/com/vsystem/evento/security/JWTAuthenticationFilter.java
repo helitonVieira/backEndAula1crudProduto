@@ -9,7 +9,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/*import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
@@ -17,11 +17,11 @@ import org.springframework.security.web.authentication.AuthenticationFailureHand
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.vsystem.evento.dto.CredenciaisDTO;*/
+import com.vsystem.evento.dto.CredenciaisDTO;
 
-public class JWTAuthenticationFilter {// extends UsernamePasswordAuthenticationFilter {
+public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilter {
 
-	/*private AuthenticationManager authenticationManager;
+	private AuthenticationManager authenticationManager;
     
     private JWTUtil jwtUtil;
 
@@ -79,5 +79,5 @@ public class JWTAuthenticationFilter {// extends UsernamePasswordAuthenticationF
                 + "\"message\": \"Email ou senha inválidos\", "
                 + "\"path\": \"/login\"}";
         }
-    }*/
+    }
 }

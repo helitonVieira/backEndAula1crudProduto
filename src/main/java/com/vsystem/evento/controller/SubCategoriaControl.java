@@ -22,7 +22,7 @@ import com.vsystem.evento.services.SubCategoriaService;
 
 
 @RestController
-@RequestMapping(value="/subcategoria")
+@RequestMapping(value="/subcategorias")
 public class SubCategoriaControl {
 	
 	@Autowired

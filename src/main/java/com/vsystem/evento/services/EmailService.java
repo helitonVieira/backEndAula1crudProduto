@@ -4,6 +4,7 @@ import javax.mail.internet.MimeMessage;
 
 import org.springframework.mail.SimpleMailMessage;
 
+import com.vsystem.evento.model.Cliente;
 import com.vsystem.evento.model.Produto;
 
 public interface EmailService {
@@ -16,5 +17,5 @@ public interface EmailService {
 	
 	void sendHtmlEmail(MimeMessage msg);//enviar o email HTML
 	
-	//void sendNewPasswordEmail(Cliente cliente, String newPass);
+	void sendNewPasswordEmail(Cliente cliente, String newPass);
 }

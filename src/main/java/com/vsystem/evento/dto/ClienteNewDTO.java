@@ -2,6 +2,9 @@ package com.vsystem.evento.dto;
 
 import java.io.Serializable;
 
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 
@@ -12,6 +15,9 @@ import com.vsystem.evento.services.validation.ClienteInsert;
 @ClienteInsert
 public class ClienteNewDTO implements Serializable {
 	private static final long serialVersionUID = 1L;
+	
+	
+	private Integer id;
 	
 	@NotEmpty(message="Preenchimento obrigatório")
 	@Length(min=5, max=120, message="O tamanho deve ser entre 5 e 120 caracteres")
@@ -51,9 +57,19 @@ public class ClienteNewDTO implements Serializable {
 
 	private Integer cidadeId;
 	
+	
+	
 	public ClienteNewDTO() {
 	}
 
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+	
 	public String getNome() {
 		return nome;
 	}

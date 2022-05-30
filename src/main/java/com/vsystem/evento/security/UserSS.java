@@ -4,14 +4,14 @@ import java.util.Collection;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-/*import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
-import org.springframework.security.core.userdetails.UserDetails;*/
+import org.springframework.security.core.userdetails.UserDetails;
 
 import com.vsystem.evento.model.enums.Perfil;
 
-public class UserSS {//implements UserDetails {
-/*	private static final long serialVersionUID = 1L;
+public class UserSS implements UserDetails {
+	private static final long serialVersionUID = 1L;
 	
 	private Integer id;
 	private String email;
@@ -70,5 +70,5 @@ public class UserSS {//implements UserDetails {
 	
 	public boolean hasRole(Perfil perfil) {
 		return getAuthorities().contains(new SimpleGrantedAuthority(perfil.getDescricao()));
-	}*/
+	}
 }
