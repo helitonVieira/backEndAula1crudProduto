@@ -15,8 +15,8 @@ public class ProdutoService {
 	@Autowired
 	private ProdutoRepository repo ; 
 	
-	@Autowired
-	private EmailService emailService;
+	/*@Autowired
+	private EmailService emailService;*/
 	
 	public ProdutoService() {}
 
