@@ -17,23 +17,32 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.vsystem.evento.model.enums.Perfil;
 import com.vsystem.evento.model.enums.TipoCliente;
 
 @Entity
+@Table(name="tab_pessoa")
 public class Cliente implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name="cod_pessoa")
 	private Integer id;
+	
+	@Column(name="nom_pessoa")
 	private String nome;
 	
-	@Column(unique=true)
+	@Column(unique=true, name="des_email")	
 	private String email;
+	
+	@Column(name="num_cnpj_cpf")
 	private String cpfOuCnpj;
+	
+	@Column(name="ind_tipo")
 	private Integer tipo;
 	
 	@JsonIgnore
@@ -43,7 +52,7 @@ public class Cliente implements Serializable {
 	private List<Endereco> enderecos = new ArrayList<>();
 	
 	@ElementCollection  //fala que vai ser uma coluna uma nova tabela com varios elementros 
-	@CollectionTable(name="TELEFONE") //nome da tabela que vai ser criado 
+	@CollectionTable(name="tab_telefone") //nome da tabela que vai ser criado 
 	private Set<String> telefones = new HashSet<>();//set colection que nao deixa ter dois com msm valor
 	
 	@ElementCollection(fetch=FetchType.EAGER)
@@ -54,9 +63,14 @@ public class Cliente implements Serializable {
 	@OneToMany(mappedBy="cliente")
 	private List<Pedido> pedidos = new ArrayList<>();
 	
+	@JsonIgnore
+	@OneToMany(mappedBy="cliente")
+	private List<PreVenda> preVendas = new ArrayList<>();
+	
 	public Cliente() {
 		addPerfil(Perfil.CLIENTE);
 	}
+	
 
 	public Cliente(Integer id, String nome, String email, String cpfOuCnpj, TipoCliente tipo, String senha) {
 		super();
@@ -147,6 +161,14 @@ public class Cliente implements Serializable {
 
 	public void setPedidos(List<Pedido> pedidos) {
 		this.pedidos = pedidos;
+	}
+	
+	public List<PreVenda> getPreVendas() {		
+		return preVendas;
+	}
+
+	public void setPreVendas(List<PreVenda> preVendas) {
+		this.preVendas = preVendas;
 	}
 	
 	@Override

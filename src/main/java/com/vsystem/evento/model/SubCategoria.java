@@ -23,8 +23,10 @@ public class SubCategoria implements Serializable{
 	@Column(name="cod_subcategoria")
 	@GeneratedValue(strategy = GenerationType.AUTO) 
 	Integer id ; 
+	
 	@Column(name="des_subcategoria")
 	String descricao;
+	
 	@JsonIgnore
 	@OneToMany(mappedBy="subcategoria")
 	private List<Produto> produtos = new ArrayList<>();

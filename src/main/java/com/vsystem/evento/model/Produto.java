@@ -2,6 +2,7 @@ package com.vsystem.evento.model;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -17,11 +18,17 @@ public class Produto  implements Serializable{
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO) 
+	@Column(name="cod_item")
 	private int id;
+	
+	@Column(name="des_item")
 	private String nome;
+	
 	@ManyToOne
 	@JoinColumn(name="cod_subcategoria")
 	private SubCategoria subcategoria;
+	
+	@Column(name="val_item")
 	private Double preco;
 	
 	public Produto() {}

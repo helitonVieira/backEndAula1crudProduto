@@ -1,5 +1,6 @@
 package com.vsystem.evento.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -9,10 +10,19 @@ import javax.persistence.Table;
 public class Usuario {
 	
 	@Id
+	@Column(name="cod_usuario")
 	private int id;
+	
+	@Column(name="nom_usuario")
 	private String nome;
+	
+	@Column(name="des_email")
 	private String email;
+	
+	@Column(name="num_idade")
 	private int idade;
+	
+	@Column(name="des_senha")
 	private String senha;
 	
 	public Usuario() {}

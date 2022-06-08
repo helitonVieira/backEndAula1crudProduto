@@ -2,18 +2,24 @@ package com.vsystem.evento.model;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name="tab_categoria")
 public class Categoria implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name="cod_categoria")
 	private Integer id;
+	
+	@Column(name="des_categoria")
 	private String nome;
 	
 	//@ManyToMany(mappedBy="categorias")
@@ -43,6 +49,7 @@ public class Categoria implements Serializable {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
+	
 
 	/*public List<Produto> getProdutos() {
 		return produtos;
